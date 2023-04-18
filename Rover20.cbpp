@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PostProcessor xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" Version="0.9.8.0">
+  <PostFile>{$comment} Made using CamBam - http://www.cambam.co.uk {$endcomment}
+{$header}
+{$mops}
+{$footer}
+</PostFile>
+  <Header>{$comment} {$cbfile.name} {$date} {$endcomment}
+{$comment} Post processor: Default {$endcomment}
+{$tooltable}
+{$cbfile.header}
+{$units} {$distancemode} {$velocitymode} {$cuttercomp(off)}
+{$toolchange(first)}
+{$clearance}</Header>
+  <MOP>{$comment} {$mop.name} {$endcomment}
+{$toolchange}
+{$velocitymode} {$workplane}
+{$mop.header}
+{$spindle} {$s}
+{$blocks}
+{$mop.footer}
+  </MOP>
+  <MinimumArcLength>0.0001</MinimumArcLength>
+  <MaximumArcRadius>10000</MaximumArcRadius>
+  <PostBuildCommand>C:\postPro_Rover20\python\python.exe</PostBuildCommand>
+  <PostBuildCommandArgs>C:\postPro_Rover20\isogen.py  "{$outfile}"  "{$outfile}.PAN"</PostBuildCommandArgs>
+</PostProcessor>
